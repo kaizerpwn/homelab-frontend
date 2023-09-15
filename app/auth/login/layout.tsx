@@ -1,14 +1,13 @@
-import "../globals.css";
+import "../../globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Providers from "../providers";
+import Providers from "../../providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Nadzorna ploča - Homelab",
-  description:
-    "Homelab - Vaša vizija pametnog doma ostvaruje se uz našu inovativnu platformu. Kreirajte jedinstvena pravila za osvjetljenje, temperaturu i sigurnost. Dobrodošli u budućnost kućne automatizacije.",
+  title: "Homelab - Login",
+  description: "Prijavite se i kontrolišite Vaše pametne uređaje u Vašoj kući.",
 };
 
 export default function RootLayout({
