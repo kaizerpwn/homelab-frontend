@@ -34,7 +34,7 @@ const Navbar = () => {
                             <li className={pathname === '/panel' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor bg-secondaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor"}>
                                 <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <AiFillHome className="w-6 h-6" />
-                                    <span className="ml-2 text-md">Dashboard</span>
+                                    <span className="ml-2 text-md">Nadzorna ploča</span>
                                 </div>
                             </li>
                         </Link>
@@ -42,7 +42,7 @@ const Navbar = () => {
                             <li className={pathname === '/panel/devices' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor bg-secondaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor"}>
                                 <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <BiDevices className="w-6 h-6" />
-                                    <span className="ml-2 text-md">Devices</span>
+                                    <span className="ml-2 text-md">Uređaji</span>
                                 </div>
                             </li>
                         </Link>
@@ -50,7 +50,7 @@ const Navbar = () => {
                             <li className={pathname === '/panel/rooms' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor bg-secondaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor"}>
                                 <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <MdBedroomChild className="w-6 h-6" />
-                                    <span className="ml-2 text-md">Rooms</span>
+                                    <span className="ml-2 text-md">Prostorije</span>
                                 </div>
                             </li>
                         </Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
                             <li className={pathname === '/' ? "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor bg-secondaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-3 text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-secondaryColor"}>
                                 <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <ImExit className="w-6 h-6" />
-                                    <span className="ml-2 text-md">Log out</span>
+                                    <span className="ml-2 text-md">Odjava</span>
                                 </div>
                             </li>
                         </div>
@@ -106,7 +106,7 @@ const Navbar = () => {
                             <li className={pathname === '/panel' ? "flex items-center justify-between w-full px-4 py-2 mb-6 font-bold text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor bg-primaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-6 font-bold text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor"}>
                                 <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <AiFillHome className="w-6 h-6" />
-                                    <span className="ml-2 text-sm">Dashboard</span>
+                                    <span className="ml-2 text-sm">Nadzorna ploča</span>
                                 </div>
                             </li>
                         </Link>
@@ -114,7 +114,7 @@ const Navbar = () => {
                             <li className={pathname === '/panel/devices' ? "flex items-center justify-between w-full px-4 py-2 mb-6 font-bold text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor bg-primaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-6 font-bold text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor"}>
                                 <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <BiDevices className="w-6 h-6" />
-                                    <span className="ml-2 text-sm">Devices</span>
+                                    <span className="ml-2 text-sm">Uređaji</span>
                                 </div>
                             </li>
                         </Link>
@@ -122,7 +122,7 @@ const Navbar = () => {
                             <li className={pathname === '/panel/rooms' ? "flex items-center justify-between w-full px-4 py-2 mb-6 font-bold text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor bg-primaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-6 font-bold text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor"}>
                                 <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
                                     <MdBedroomChild className="w-6 h-6" />
-                                    <span className="ml-2 text-sm">Rooms</span>
+                                    <span className="ml-2 text-sm">Sobe</span>
                                 </div>
                             </li>
                         </Link>
@@ -138,7 +138,7 @@ const Navbar = () => {
                             <li className={pathname === '/logout' ? "flex items-center justify-between w-full px-4 py-2 mb-6 font-bold text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor bg-primaryColor" : "flex items-center justify-between w-full px-4 py-2 mb-6 font-bold text-gray-100 duration-100 ease-in cursor-pointer rounded-xl hover:bg-primaryColor"}>
                                 <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <ImExit className="w-6 h-6" />
-                                    <span className="ml-2 text-sm">Log out</span>
+                                    <span className="ml-2 text-sm">Odjava</span>
                                 </div>
                             </li>
                         </Link>

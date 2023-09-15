@@ -55,7 +55,7 @@ export const data = {
   datasets: [
     {
       fill: true,
-      label: 'Temperature po satu',
+      label: 'Temperatura po satu',
       data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 2, 11, 12, 13, 14, 15, 3, 17, 18, 19, 12, 4, 22, 1, 12],
       borderColor: '#A78BFA',
       backgroundColor: 'rgba(167, 139, 250, 0.5)',

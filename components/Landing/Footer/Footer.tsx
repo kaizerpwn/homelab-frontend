@@ -1,13 +1,9 @@
 'use client'
 
+import { imageLoader } from "@/utils/ImageLoader";
 import Image, { ImageLoaderProps } from "next/image";
 
 const Footer = () => {
-
-  const imageLoader = ({ src }: ImageLoaderProps) => {
-    return src;
-  }
-
   return (
     <footer className="text-gray-600 body-font bg-secondaryColor font-lexend">
       <div className="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-nowrap">
