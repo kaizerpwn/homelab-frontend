@@ -1,27 +1,129 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100&display=swap');
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: 'Lexend';
+  src: url('../public/fonts/Lexend-Regular.ttf');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  html {
+    @apply scroll-smooth;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .headerBtn {
+    background-color: #7d54f8;
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+  }
+
+  .headerBtn:hover {
+    background-color: #7d54f8;
+    box-shadow: 0 0 0 5px #7d54f85f;
+    color: #fff;
+  }
+
+  .btn {
+    --color: #7d54f8;
+    font-family: inherit;
+    display: inline-block;
+    line-height: 2.5em;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color);
+  }
+
+  .btn:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 300px;
+    border-radius: 50%;
+  }
+
+  .btn:hover {
+    color: #fff;
+  }
+
+  .btn:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+  }
+
+  .btn:hover:before {
+    top: -30px;
+    left: -30px;
+  }
+
+  .btn:active:before {
+    background: #7d54f8;
+    transition: background 0s;
+  }
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a78bfa #fff;
+}
+*::selection {
+  color: #fff;
+  background: #a78bfa;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+  width: 6px;
+}
+*::-webkit-scrollbar-track {
+  background-color: #fff;
+  border: 4px solid #fff;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #fff;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+  /* border-radius: 20px; */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #a78bfa;
+  border: 1px solid #a78bfa;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 40;
+  transition: all 0.5s;
+}
+
+#pocetnaSekcija::-webkit-scrollbar,
+#prostorije::-webkit-scrollbar,
+#uredjaji::-webkit-scrollbar {
+  display: none;
 }
