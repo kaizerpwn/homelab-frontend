@@ -4,14 +4,15 @@ import Breadcrumb from "@/components/Panel/Breadcrumb/Breadcrumb";
 import CurrentStats from "@/components/Panel/Home/CurrentStats";
 import TemperatureGraph from "@/components/Panel/Home/TemperatureGraph";
 import PanelLayout from "@/components/Panel/PanelLayout";
-import { User } from "@/utils/Interfaces/User";
 import { Weather } from "@/utils/Interfaces/Weather";
 import { WeatherAPI } from "@/utils/WeatherAPI";
-import Head from "next/head";
+import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
 const Dashboard = () => {
   const [weatherInfo, setWeatherInfo] = useState<Weather | undefined>();
+  const { data: session } = useSession();
+  console.log(session);
 
   // useEffect(() => {
   //   const getWeatherInfo = async () => {

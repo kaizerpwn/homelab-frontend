@@ -1,9 +1,7 @@
 "use client";
 
-import Head from "next/head";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 import React, { useState } from "react";
-// import options from "../../api/auth/[...nextauth";
 import { imageLoader } from "@/utils/ImageLoader";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,6 +11,7 @@ export default function Login() {
     email: "",
     password: "",
   });
+  const { data: session } = useSession();
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -22,12 +21,18 @@ export default function Login() {
     setTexts((prev) => ({ ...prev, [e.target.name]: [e.target.value][0] }));
   };
 
-  const handleSignIn = () => {
-    signIn("credentials", {
-      email: texts.email,
-      password: texts.password,
-      callbackUrl: "/panel",
-    });
+  const handleSignIn = async () => {
+    try {
+      const res = await signIn("credentials", {
+        email: texts.email,
+        password: texts.password,
+        callbackUrl: "/panel",
+      });
+      if (res?.status === 200) {
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleEnter = (e: React.KeyboardEvent) => {
