@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import Breadcrumb from '@/components/Panel/Breadcrumb/Breadcrumb'
-import PanelLayout from '@/components/Panel/PanelLayout'
-import Rooms from '@/components/Panel/Rooms/Rooms'
+import Breadcrumb from "@/components/OldPanel/Breadcrumb/Breadcrumb";
+import PanelLayout from "@/components/OldPanel/PanelLayout";
+import Rooms from "@/components/OldPanel/Rooms/Rooms";
 
 const RoomsPage = () => {
   return (
@@ -12,7 +12,7 @@ const RoomsPage = () => {
         <Rooms />
       </PanelLayout>
     </>
-  )
-}
+  );
+};
 
-export default RoomsPage
+export default RoomsPage;

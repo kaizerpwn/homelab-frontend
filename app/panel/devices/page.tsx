@@ -1,8 +1,8 @@
 "use client";
 
-import Breadcrumb from "@/components/Panel/Breadcrumb/Breadcrumb";
-import Devices from "@/components/Panel/Devices/Devices";
-import PanelLayout from "@/components/Panel/PanelLayout";
+import Breadcrumb from "@/components/OldPanel/Breadcrumb/Breadcrumb";
+import Devices from "@/components/OldPanel/Devices/Devices";
+import PanelLayout from "@/components/OldPanel/PanelLayout";
 
 const DevicesPage = () => {
   return (

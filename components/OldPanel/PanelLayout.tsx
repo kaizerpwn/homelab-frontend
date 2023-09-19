@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "../Panel/Navbar/Navbar";
+import Navbar from "./Navbar/Navbar";
 import React, { PropsWithChildren } from "react";
 
 export default function PanelLayout({ children }: PropsWithChildren) {
