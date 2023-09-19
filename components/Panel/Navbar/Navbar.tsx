@@ -12,13 +12,13 @@ const Navbar: React.FC = () => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 pt-8">
         <Link href="/panel" className="flex items-center">
           <Image
-            src="/images/logo-white.png"
+            src="/images/logo.png"
             alt="Homelab logo in navbar"
-            className="h-16 mr-3 cursor-pointer"
-            width={250}
+            className="h-18 mr-3 cursor-pointer"
+            width={270}
             placeholder="blur"
-            blurDataURL="/images/logo-white.png"
-            height={125}
+            blurDataURL="/images/logo.png"
+            height={180}
           />
         </Link>
         <div className="hidden w-full md:flex md:w-auto">
