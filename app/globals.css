@@ -131,7 +131,7 @@ body {
 
 #pocetnaSekcija::-webkit-scrollbar,
 #prostorije::-webkit-scrollbar,
-#uredjaji::-webkit-scrollbar {
+.scroll-hidden::-webkit-scrollbar {
   display: none;
 }
 

@@ -17,7 +17,7 @@ export default function PanelLayout({ children }: PropsWithChildren) {
       <main className="h-full relative">
         <div className="w-full h-full">
           <Navbar />
-          <div className="container w-11/12 h-64 px-6 py-3 mx-auto md:w-4/5">
+          <div className="container w-11/12 h-64 px-6 py-3 mx-auto md:w-[90%]">
             <div className="w-full h-full">{children}</div>
           </div>
         </div>
