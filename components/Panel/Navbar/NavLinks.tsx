@@ -6,22 +6,22 @@ import { MdOutlineBedroomParent, MdOutlineDevices } from "react-icons/md";
 
 const links = [
   {
-    name: "Nadzorna ploča",
+    name: "Dashboard",
     icon: <AiOutlineDashboard className="w-5 h-5 mr-2" />,
     href: "/panel",
   },
   {
-    name: "Kuće",
+    name: "Houses",
     icon: <BsHouseUp className="w-5 h-5 mr-2" />,
     href: "/houses",
   },
   {
-    name: "Prostorije",
+    name: "Rooms",
     icon: <MdOutlineBedroomParent className="w-5 h-5 mr-2" />,
     href: "/rooms",
   },
   {
-    name: "Uređaji",
+    name: "Devices",
     icon: <MdOutlineDevices className="w-5 h-5 mr-2" />,
     href: "/devices",
   },

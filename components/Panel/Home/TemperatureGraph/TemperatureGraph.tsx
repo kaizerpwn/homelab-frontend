@@ -75,7 +75,7 @@ export const data = {
   datasets: [
     {
       fill: true,
-      label: "Temperatura po satu",
+      label: "Temperature per hour",
       data: [
         1, 2, 3, 4, 5, 6, 7, 8, 9, 2, 11, 12, 13, 14, 15, 3, 17, 18, 19, 12, 4,
         22, 1, 12,
@@ -92,8 +92,8 @@ const TemperatureGraph = () => {
   return (
     <div className="text-white mt-10 h-40">
       <div className="border-l-3 border-primaryColor/70 pl-4">
-        <h1 className="text-2xl">Temperature po satu</h1>
-        <h3 className="text-md text-gray-400">Statistika zadnjih 24h</h3>
+        <h1 className="text-2xl">Temperature per hour</h1>
+        <h3 className="text-md text-gray-400">Statistics of last 24 hours</h3>
       </div>
       <Line options={options} data={data} className="max-h-[240px]" />
     </div>

@@ -3,8 +3,18 @@
 import { Avatar } from "@nextui-org/avatar";
 import Image from "next/image";
 import Link from "next/link";
-import { BiChevronDown } from "react-icons/bi";
+import { BiChevronDown, BiSolidUserCircle } from "react-icons/bi";
 import NavLinks from "./NavLinks";
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+  cn,
+} from "@nextui-org/react";
+import { MdLogout } from "react-icons/md";
+import { TbSettings } from "react-icons/tb";
+import { signOut } from "next-auth/react";
 
 const Navbar: React.FC = () => {
   return (
@@ -23,14 +33,47 @@ const Navbar: React.FC = () => {
         </Link>
         <div className="hidden w-full md:flex md:w-auto">
           <NavLinks />
-          <div className="flex items-center cursor-pointer ml-28">
-            <Avatar
-              showFallback
-              name="Ibrahim Okić"
-              src="https://images.unsplash.com/broken"
-            />
-            <span className="text-white ml-4">Ibrahim Okić</span>
-            <BiChevronDown className="text-white ml-1" />
+          <div className="cursor-pointer ml-28">
+            <Dropdown>
+              <DropdownTrigger>
+                <div className="flex items-center">
+                  <Avatar
+                    showFallback
+                    name="Ibrahim Okić"
+                    src="https://images.unsplash.com/broken"
+                  />
+                  <span className="text-white ml-4">Ibrahim Okić</span>
+                  <BiChevronDown className="text-white ml-1" />
+                </div>
+              </DropdownTrigger>
+              <DropdownMenu
+                aria-label="Dropdown menu with icons"
+                variant="faded"
+              >
+                <DropdownItem
+                  startContent={
+                    <BiSolidUserCircle className="text-xl text-default-500 pointer-events-none flex-shrink-0" />
+                  }
+                >
+                  Profile
+                </DropdownItem>
+                <DropdownItem
+                  startContent={
+                    <TbSettings className="text-xl text-default-500 pointer-events-none flex-shrink-0" />
+                  }
+                >
+                  Settings
+                </DropdownItem>
+                <DropdownItem
+                  onClick={() => signOut()}
+                  startContent={
+                    <MdLogout className="text-xl text-default-500 pointer-events-none flex-shrink-0" />
+                  }
+                >
+                  Log out
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </div>
         </div>
       </div>
