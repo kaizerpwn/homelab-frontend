@@ -1,4 +1,5 @@
 import { Badge } from "@nextui-org/react";
+import { AiOutlinePlus } from "react-icons/ai";
 import { GiWashingMachine } from "react-icons/gi";
 import { ImPower, ImSwitch } from "react-icons/im";
 import { TbFridge, TbMicrowave } from "react-icons/tb";
@@ -7,14 +8,19 @@ const Devices = () => {
   return (
     <div className="text-white mt-10 max-w-[90%]">
       <div className="border-l-3 border-primaryColor/70 pl-4">
-        <h1 className="text-2xl">Upravljajte uređajima</h1>
+        <div className="flex justify-between">
+          <h1 className="text-2xl">Upravljajte uređajima</h1>
+          <button className="flex bg-secondaryColor items-center hover:bg-secondaryColor/80 transition duration-500 py-2 px-4 text-white rounded-xl">
+            <AiOutlinePlus className="mr-1" /> Dodaj uređaj
+          </button>
+        </div>
         <h3 className="text-md text-gray-400">Trenutno aktivnih uređaja: 3</h3>
       </div>
 
       <div className="flex mt-4 max-w-full overflow-x-scroll scroll-x-hidden scroll-hidden">
-        <div className="bg-ultraViolet/20 h-48 mr-8 min-w-[10rem] rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between">
+        <div className="bg-ultraViolet/20 h-48 mr-8 min-w-[10rem] rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between transition duration-500 hover:bg-ultraViolet/40 cursor-pointer">
           <p className="text-white/50 flex items-center">Veš mašina</p>
-          <div className="flex justify-center items-center mb-4 border-b-2 border-gray-600 pb-4">
+          <div className="flex justify-center items-center mb-4 pb-4">
             <Badge
               content={<ImSwitch />}
               disableOutline
@@ -29,9 +35,9 @@ const Devices = () => {
           </div>
         </div>
 
-        <div className="bg-ultraViolet/20 mr-8 h-48 min-w-[10rem] rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between">
+        <div className="bg-ultraViolet/20 mr-8 h-48 min-w-[10rem] rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between transition duration-500 hover:bg-ultraViolet/40 cursor-pointer">
           <p className="text-white/50 flex items-center">Frižider</p>
-          <div className="flex justify-center items-center mb-4 border-b-2 border-gray-600 pb-4">
+          <div className="flex justify-center items-center mb-4 pb-4">
             <Badge
               content={<ImPower />}
               disableOutline
@@ -46,9 +52,9 @@ const Devices = () => {
           </div>
         </div>
 
-        <div className="bg-ultraViolet/20 h-48 mr-8 min-w-[10rem] rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between">
+        <div className="bg-ultraViolet/20 h-48 mr-8 min-w-[10rem] rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between transition duration-500 hover:bg-ultraViolet/40 cursor-pointer">
           <p className="text-white/50 flex items-center">Mikrovalna</p>
-          <div className="flex justify-center items-center mb-4 border-b-2 border-gray-600 pb-4">
+          <div className="flex justify-center items-center mb-4 pb-4">
             <Badge
               content={<ImSwitch />}
               disableOutline

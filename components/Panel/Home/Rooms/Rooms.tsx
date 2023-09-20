@@ -6,7 +6,7 @@ import { TbToolsKitchen } from "react-icons/tb";
 const Rooms = () => {
   return (
     <>
-      <div className="bg-ultraViolet/20 h-56 max-w-[10rem] w-full rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between">
+      <div className="bg-ultraViolet/20 h-56 max-w-[10rem] w-full rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between transition duration-500 hover:bg-ultraViolet/40 cursor-pointer">
         <p className="text-white/50 flex items-center">Kuhinja</p>
         <div className="flex justify-center items-center mb-4 border-b-2 border-gray-600 pb-4">
           <TbToolsKitchen className="w-20 h-20 text-gray-400" />
@@ -19,7 +19,7 @@ const Rooms = () => {
         </div>
       </div>
 
-      <div className="bg-ultraViolet/20 h-56 max-w-[10rem] w-full rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between">
+      <div className="bg-ultraViolet/20 h-56 max-w-[10rem] w-full rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between transition duration-500 hover:bg-ultraViolet/40 cursor-pointer">
         <p className="text-white/50 flex items-center">Spavaća soba</p>
         <div className="flex justify-center items-center mb-4 border-b-2 border-gray-600 pb-4">
           <Tooltip
@@ -46,7 +46,7 @@ const Rooms = () => {
         </div>
       </div>
 
-      <div className="bg-ultraViolet/20 h-56 max-w-[10rem] w-full rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between">
+      <div className="bg-ultraViolet/20 h-56 max-w-[10rem] w-full rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between transition duration-500 hover:bg-ultraViolet/40 cursor-pointer">
         <p className="text-white/50 flex items-center">Dnevni boravak</p>
         <div className="flex justify-center items-center mb-4 border-b-2 border-gray-600 pb-4">
           <MdOutlineFamilyRestroom className="w-20 h-20 text-gray-400" />
