@@ -6,6 +6,7 @@ import { imageLoader } from "@/utils/ImageLoader";
 import Image from "next/image";
 import Axios from "@/utils/Axios";
 import Link from "next/link";
+import BackgroundEffects from "@/components/Particles/BackgroundEffects";
 
 export default function Login() {
   const [error, setError] = useState<string>();
@@ -27,12 +28,15 @@ export default function Login() {
   };
 
   const handleRegister = async () => {
-    const res = await Axios.makeRequest
-      .post("/user/register", texts)
+    await Axios.makeRequest
+      .post("http://localhost:8000/api/users/register", texts)
       .then((result) => {
         if (result.status === 200 && result.data.message === 302) {
           setError("Korisnik sa takvim emailom ili lozinkom već postoji.");
-        } else if (result.status === 200 && result.data.message === 200) {
+        } else if (
+          result.status === 200 &&
+          result.data.message === "Account successfully registered."
+        ) {
           signIn("credentials", {
             email: texts.email,
             password: texts.password,
@@ -48,11 +52,12 @@ export default function Login() {
 
   return (
     <>
+      <BackgroundEffects />
       <main
-        className="flex items-center justify-center"
+        className="flex items-center justify-center relative"
         style={{ height: "100vh" }}
       >
-        <div className="w-full max-w-md p-4 mx-auto rounded-md shadow sm:p-8 dark:bg-gray-700 dark:text-gray-100">
+        <div className="w-full max-w-md p-4 mx-auto rounded-md shadow sm:p-8 bg-gray-700 text-white">
           <Image
             loader={imageLoader}
             className="flex justify-center object-cover object-center mx-auto rounded-3xl"
@@ -61,65 +66,63 @@ export default function Login() {
             width={300}
             height={200}
           />
-          <h2 className="text-3xl font-semibold text-center ">
-            Registrujte se
-          </h2>
+          <h2 className="text-3xl font-semibold text-center ">Register</h2>
           <p className="text-sm text-center dark:text-gray-400">
-            Već posjedujete račun?
+            Already have account?
             <Link
               href="/auth/login"
               rel="noopener noreferrer"
               className="focus:underline hover:underline"
             >
               {" "}
-              Prijavite se
+              Sign in
             </Link>
           </p>
           <form className="space-y-8 ng-untouched ng-pristine ng-valid">
             <input name="csrfToken" type="hidden" />
             <div className="space-y-3">
               <div className="space-y-2">
-                <label className="block text-sm">Ime</label>
+                <label className="block text-sm">First name</label>
                 <input
                   type="text"
                   name="name"
                   id="name"
                   onKeyDown={handleEnter}
-                  placeholder="Unesite Vaše ime.."
+                  placeholder="Insert your first name.."
                   value={texts.name}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 text-gray-800 focus:dark:border-violet-400"
                 />
               </div>
               <div className="space-y-2">
-                <label className="block text-sm">Prezime</label>
+                <label className="block text-sm">Surname</label>
                 <input
                   type="email"
                   name="surname"
                   id="surname"
                   onKeyDown={handleEnter}
-                  placeholder="Unesite Vaše prezime.."
+                  placeholder="Insert your surname.."
                   value={texts.surname}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 text-gray-800 focus:dark:border-violet-400"
                 />
               </div>
               <div className="space-y-2">
-                <label className="block text-sm">Email adresa</label>
+                <label className="block text-sm">Email address</label>
                 <input
                   type="email"
                   name="email"
                   id="email"
                   onKeyDown={handleEnter}
-                  placeholder="vasemail@homelab.com"
+                  placeholder="yourmail@homelab.com"
                   value={texts.email}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 text-gray-800 focus:dark:border-violet-400"
                 />
               </div>
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <label className="text-sm">Lozinka</label>
+                  <label className="text-sm">Password</label>
                 </div>
                 <input
                   type="password"
@@ -129,12 +132,12 @@ export default function Login() {
                   placeholder="********"
                   value={texts.password}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 text-gray-800 focus:dark:border-violet-400"
                 />
               </div>
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <label className="text-sm">Grad</label>
+                  <label className="text-sm">City</label>
                 </div>
                 <div className="flex justify-center">
                   <select
@@ -143,7 +146,7 @@ export default function Login() {
                     onChange={handleChange}
                     className="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   >
-                    <option hidden>Izaberite grad</option>
+                    <option hidden>Choose city</option>
                     <option value="Sarajevo">Sarajevo</option>
                     <option value="Banja Luka">Banja Luka</option>
                     <option value="Tuzla">Tuzla</option>
@@ -190,10 +193,10 @@ export default function Login() {
             </div>
             <button
               type="button"
-              className="w-full px-8 py-3 font-semibold duration-500 rounded-md dark:bg-violet-400 dark:text-gray-800 hover:bg-secondaryColor"
+              className="w-full px-8 py-3 font-semibold duration-500 rounded-md bg-violet-400 dark:text-gray-800 hover:bg-secondaryColor"
               onClick={handleRegister}
             >
-              Registrujte se
+              Register
             </button>
           </form>
         </div>

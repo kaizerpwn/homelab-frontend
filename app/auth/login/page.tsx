@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { imageLoader } from "@/utils/ImageLoader";
 import Image from "next/image";
 import Link from "next/link";
+import BackgroundEffects from "@/components/Particles/BackgroundEffects";
 
 export default function Login() {
   const [texts, setTexts] = useState({
@@ -21,7 +22,7 @@ export default function Login() {
     setTexts((prev) => ({ ...prev, [e.target.name]: [e.target.value][0] }));
   };
 
-  const handleSignIn = async () => {
+  const handleSignIn = async (e: React.KeyboardEvent | React.MouseEvent) => {
     try {
       const res = await signIn("credentials", {
         email: texts.email,
@@ -36,16 +37,19 @@ export default function Login() {
   };
 
   const handleEnter = (e: React.KeyboardEvent) => {
-    if (e.keyCode === 13) handleSignIn();
+    if ((e as React.KeyboardEvent).keyCode === 13) {
+      handleSignIn(e as React.KeyboardEvent);
+    }
   };
 
   return (
     <>
+      <BackgroundEffects />
       <main
-        className="flex items-center justify-center"
+        className="flex items-center justify-center relative"
         style={{ height: "100vh" }}
       >
-        <div className="w-full max-w-md p-4 mx-auto rounded-md shadow sm:p-8 dark:bg-gray-700 dark:text-gray-100">
+        <div className="w-full max-w-md p-4 mx-auto rounded-md shadow sm:p-8 bg-gray-700 text-white">
           <Image
             loader={imageLoader}
             className="flex justify-center object-cover object-center mx-auto rounded-3xl"
@@ -55,18 +59,16 @@ export default function Login() {
             width={300}
             height={200}
           />
-          <h2 className="mb-3 text-3xl font-semibold text-center">
-            Prijavite se
-          </h2>
+          <h2 className="mb-3 text-3xl font-semibold text-center">Sign in</h2>
           <p className="text-sm text-center dark:text-gray-400">
-            Ne posjedujete račun?
+            Don&apos;t have account?
             <Link
               href="/auth/register"
               rel="noopener noreferrer"
               className="focus:underline hover:underline"
             >
               {" "}
-              Registrujte se
+              Register
             </Link>
           </p>
           <div className="flex items-center w-full my-4"></div>
@@ -74,27 +76,27 @@ export default function Login() {
             <input name="csrfToken" type="hidden" />
             <div className="space-y-4">
               <div className="space-y-2">
-                <label className="block text-sm">Email adresa</label>
+                <label className="block text-sm">Email address</label>
                 <input
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="vasemail@homelab.com"
+                  placeholder="yourmail@homelab.com"
                   onKeyDown={handleEnter}
                   value={texts.email}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 text-gray-800 focus:dark:border-violet-400"
                 />
               </div>
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <label className="text-sm">Lozinka</label>
+                  <label className="text-sm">Password</label>
                   <a
                     rel="noopener noreferrer"
                     href="#"
                     className="text-xs hover:underline dark:text-gray-400"
                   >
-                    Zaboravili ste lozinku?
+                    Forgot your password?
                   </a>
                 </div>
                 <input
@@ -105,16 +107,16 @@ export default function Login() {
                   onKeyDown={handleEnter}
                   value={texts.password}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800  text-gray-800 focus:dark:border-violet-400"
                 />
               </div>
             </div>
             <button
               type="button"
-              className="w-full px-8 py-3 font-semibold duration-500 rounded-md dark:bg-violet-400 dark:text-gray-800 hover:bg-secondaryColor"
-              onClick={handleSignIn}
+              className="w-full px-8 py-3 font-semibold duration-500 rounded-md bg-violet-400 hover:bg-secondaryColor"
+              onClick={(e: React.MouseEvent) => handleSignIn(e)}
             >
-              Prijavite se
+              Sign in
             </button>
           </form>
         </div>

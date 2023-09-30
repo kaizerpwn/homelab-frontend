@@ -14,8 +14,10 @@ import {
 import { MdLogout } from "react-icons/md";
 import { TbSettings } from "react-icons/tb";
 import { signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Navbar: React.FC = () => {
+  const router = useRouter();
   return (
     <nav className="border-gray-200 w-full">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 pt-8">
@@ -65,7 +67,10 @@ const Navbar: React.FC = () => {
                   Settings
                 </DropdownItem>
                 <DropdownItem
-                  onClick={() => signOut()}
+                  onClick={() => {
+                    router.push("/auth/login");
+                    signOut();
+                  }}
                   startContent={
                     <MdLogout className="text-xl text-gray-300 pointer-events-none flex-shrink-0" />
                   }

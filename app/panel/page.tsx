@@ -6,12 +6,14 @@ import TemperatureGraph from "@/components/Panel/Home/TemperatureGraph/Temperatu
 import PanelLayout from "@/components/Panel/Layout";
 import { useSession } from "next-auth/react";
 import Preloader from "../preloader";
+import { useRouter } from "next/navigation";
 
 const Dashboard = () => {
   const { data: session, status } = useSession();
+  const router = useRouter();
   console.log(session, status);
 
-  if (status === 'authenticated') {
+  if (status === "authenticated") {
     return (
       <>
         <PanelLayout>
@@ -23,7 +25,8 @@ const Dashboard = () => {
         </PanelLayout>
       </>
     );
-  } else if (status === 'loading') return <Preloader />
+  } else if (status === "loading") return <Preloader />;
+  else if (status === "unauthenticated") return router.push("/auth/login");
 };
 
 export default Dashboard;

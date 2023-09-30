@@ -1,19 +1,13 @@
 "use client";
 
+import BackgroundEffects from "../Particles/BackgroundEffects";
 import Navbar from "./Navbar/Navbar";
 import React, { PropsWithChildren } from "react";
 
 export default function PanelLayout({ children }: PropsWithChildren) {
   return (
     <>
-      <div className="background">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <BackgroundEffects />
       <main className="h-full relative">
         <div className="w-full h-full">
           <Navbar />
