@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession, signIn } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import React, { useState } from "react";
 import { imageLoader } from "@/utils/ImageLoader";
 import Image from "next/image";
@@ -12,7 +12,6 @@ export default function Login() {
     email: "",
     password: "",
   });
-  const { data: session } = useSession();
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -85,7 +84,7 @@ export default function Login() {
                   onKeyDown={handleEnter}
                   value={texts.email}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 text-gray-800 focus:dark:border-violet-400"
+                  className="w-full px-3 py-2 border rounded-md border-gray-800/40 bg-gray-800/40 text-gray-200 outline-none"
                 />
               </div>
               <div className="space-y-2">
@@ -107,13 +106,13 @@ export default function Login() {
                   onKeyDown={handleEnter}
                   value={texts.password}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800  text-gray-800 focus:dark:border-violet-400"
+                  className="w-full px-3 py-2 border rounded-md border-gray-800/40 bg-gray-800/40  text-gray-200 outline-none"
                 />
               </div>
             </div>
             <button
               type="button"
-              className="w-full px-8 py-3 font-semibold duration-500 rounded-md bg-violet-400 hover:bg-secondaryColor"
+              className="w-full px-8 py-3 font-semibold duration-500 rounded-md bg-secondaryColor hover:bg-violet-400"
               onClick={(e: React.MouseEvent) => handleSignIn(e)}
             >
               Sign in

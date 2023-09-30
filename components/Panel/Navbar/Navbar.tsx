@@ -32,10 +32,10 @@ const Navbar: React.FC = () => {
             height={180}
           />
         </Link>
-        <div className="hidden w-full md:flex md:w-auto">
+        <div className="hidden w-full md:flex md:w-auto [&>*]:text-white">
           <NavLinks />
           <div className="cursor-pointer ml-28">
-            <Dropdown className="bg-gradient-to-r from-gray-700 to-gray-800/90 text-white">
+            <Dropdown className="bg-ultraViolet/20 backdrop-filter backdrop-blur-lg text-white [&>*]:text-white">
               <DropdownTrigger>
                 <div className="flex items-center">
                   <Avatar
@@ -53,13 +53,15 @@ const Navbar: React.FC = () => {
                 variant="light"
               >
                 <DropdownItem
+                  className="hover:text-white [&>*]:hover:text-gray-300 [&>*]:duration-500 [&>*]:transition"
                   startContent={
-                    <BiSolidUserCircle className="text-xl text-gray-300 pointer-events-none flex-shrink-0 hover:text-white" />
+                    <BiSolidUserCircle className="text-xl text-gray-300 pointer-events-none flex-shrink-0" />
                   }
                 >
                   Profile
                 </DropdownItem>
                 <DropdownItem
+                  className="hover:text-white [&>*]:hover:text-gray-300 [&>*]:duration-500 [&>*]:transition"
                   startContent={
                     <TbSettings className="text-xl text-gray-300 pointer-events-none flex-shrink-0" />
                   }
@@ -71,6 +73,7 @@ const Navbar: React.FC = () => {
                     router.push("/auth/login");
                     signOut();
                   }}
+                  className="hover:text-white [&>*]:hover:text-gray-300 [&>*]:duration-500 [&>*]:transition"
                   startContent={
                     <MdLogout className="text-xl text-gray-300 pointer-events-none flex-shrink-0" />
                   }

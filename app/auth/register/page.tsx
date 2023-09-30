@@ -1,12 +1,15 @@
 "use client";
-import Head from "next/head";
-import { useSession, signIn, signOut } from "next-auth/react";
+
+import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { imageLoader } from "@/utils/ImageLoader";
 import Image from "next/image";
 import Axios from "@/utils/Axios";
 import Link from "next/link";
 import BackgroundEffects from "@/components/Particles/BackgroundEffects";
+import Cities from "@/components/Panel/Register/Cities";
+import States from "@/components/Panel/Register/States";
+import Inputs from "@/components/Panel/Register/Inputs";
 
 export default function Login() {
   const [error, setError] = useState<string>();
@@ -78,122 +81,24 @@ export default function Login() {
               Sign in
             </Link>
           </p>
-          <form className="space-y-8 ng-untouched ng-pristine ng-valid">
+          <form className="space-y-8">
             <input name="csrfToken" type="hidden" />
             <div className="space-y-3">
-              <div className="space-y-2">
-                <label className="block text-sm">First name</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  onKeyDown={handleEnter}
-                  placeholder="Insert your first name.."
-                  value={texts.name}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 text-gray-800 focus:dark:border-violet-400"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="block text-sm">Surname</label>
-                <input
-                  type="email"
-                  name="surname"
-                  id="surname"
-                  onKeyDown={handleEnter}
-                  placeholder="Insert your surname.."
-                  value={texts.surname}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 text-gray-800 focus:dark:border-violet-400"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="block text-sm">Email address</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  onKeyDown={handleEnter}
-                  placeholder="yourmail@homelab.com"
-                  value={texts.email}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 text-gray-800 focus:dark:border-violet-400"
-                />
-              </div>
+              <Inputs handleChange={handleChange} handleEnter={handleEnter} texts={texts} />
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <label className="text-sm">Password</label>
-                </div>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  onKeyDown={handleEnter}
-                  placeholder="********"
-                  value={texts.password}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-800 text-gray-800 focus:dark:border-violet-400"
-                />
-              </div>
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <label className="text-sm">City</label>
+                  <label className="text-sm">Location</label>
                 </div>
                 <div className="flex justify-center">
-                  <select
-                    name="city"
-                    value={texts.city}
-                    onChange={handleChange}
-                    className="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  >
-                    <option hidden>Choose city</option>
-                    <option value="Sarajevo">Sarajevo</option>
-                    <option value="Banja Luka">Banja Luka</option>
-                    <option value="Tuzla">Tuzla</option>
-                    <option value="Zenica">Zenica</option>
-                    <option value="Mostar">Mostar</option>
-                    <option value="Istocno Sarajevo">Istočno Sarajevo</option>
-                    <option value="Srebrenik">Srebrenik</option>
-                    <option value="Bihac">Bihać</option>
-                    <option value="Brcko">Brčko</option>
-                    <option value="Bijeljina">Bijeljina</option>
-                    <option value="Prijedor">Prijedor</option>
-                    <option value="Trebinje">Trebinje</option>
-                    <option value="Travnik">Travnik</option>
-                    <option value="Kiseljak">Kiseljak</option>
-                    <option value="Doboj">Doboj</option>
-                    <option value="Cazin">Cazir</option>
-                    <option value="Bugojno">Bugojno</option>
-                    <option value="Velika Kladuša">Velika Kladuša</option>
-                    <option value="Visoko">Visoko</option>
-                    <option value="Gorazde">Goražde</option>
-                    <option value="Konjic">Konjic</option>
-                    <option value="Gracanica">Gračanica</option>
-                    <option value="Gradacac">Gradačac</option>
-                    <option value="Bosanska aKrupa">Bosanska Krupa</option>
-                    <option value="Mrkonjic Grad">Mrkonjić Grad</option>
-                    <option value="Foca">Foča</option>
-                    <option value="Zavidovici">Zavidovići</option>
-                    <option value="Zivinice">Živinice</option>
-                    <option value="Sanski Most">Sanski Most</option>
-                    <option value="Bosanska Gradiska">Bosanska Gradiška</option>
-                    <option value="Bileci">Bileći</option>
-                    <option value="Lukavac">Lukavac</option>
-                    <option value="Kakanj">Kakanj</option>
-                    <option value="Livno">Livno</option>
-                    <option value="Odžak">Odžak</option>
-                    <option value="Sipovo">Šipovo</option>
-                    <option value="Prozor">Prozor</option>
-                    <option value="Novi Travnik">Novi Travnik</option>
-                    <option value="Zvornik">Zvornik</option>
-                  </select>
+                  <States />
+                  <Cities texts={texts} handleChange={handleChange} />
                 </div>
               </div>
               <span className="text-red-400">{error}</span>
             </div>
             <button
               type="button"
-              className="w-full px-8 py-3 font-semibold duration-500 rounded-md bg-violet-400 dark:text-gray-800 hover:bg-secondaryColor"
+              className="w-full px-8 py-3 font-semibold duration-500 rounded-md bg-secondaryColor dark:text-gray-800 hover:bg-violet-400"
               onClick={handleRegister}
             >
               Register
