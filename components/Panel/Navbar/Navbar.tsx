@@ -10,7 +10,6 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-  cn,
 } from "@nextui-org/react";
 import { MdLogout } from "react-icons/md";
 import { TbSettings } from "react-icons/tb";

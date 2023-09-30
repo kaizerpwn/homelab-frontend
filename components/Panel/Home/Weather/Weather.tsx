@@ -6,7 +6,7 @@ const Weather = () => {
       <div className="w-full flex justify-between h-40 backdrop-filter backdrop-blur-lg drop-shadow-lg rounded-2xl bg-ultraViolet/20 p-4 text-gray-400">
         <div className="flex flex-col rounded">
           <div className="font-bold text-xl">Weather informations:</div>
-          <div className="text-md text-primaryColor">Tuzla</div>
+          <div className="text-md text-gray-400">Tuzla</div>
           <div className="text-sm text-gray-500">Srijeda 19 September 2023</div>
         </div>
         <div className="flex flex-row items-center justify-center">

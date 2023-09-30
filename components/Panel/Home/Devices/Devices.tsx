@@ -31,7 +31,7 @@ const Devices = () => {
                 shape="circle"
                 size="lg"
               >
-                <GiWashingMachine className="w-20 h-20 text-gray-400" />
+                <GiWashingMachine className="w-20 h-20 text-gray-200" />
               </Badge>
             </Tooltip>
           </div>
@@ -50,7 +50,7 @@ const Devices = () => {
                 shape="circle"
                 size="lg"
               >
-                <TbFridge className="w-20 h-20 text-gray-400" />
+                <TbFridge className="w-20 h-20 text-gray-200" />
               </Badge>
             </Tooltip>
           </div>
@@ -69,7 +69,7 @@ const Devices = () => {
                 shape="circle"
                 size="lg"
               >
-                <TbMicrowave className="w-20 h-20 text-gray-400" />
+                <TbMicrowave className="w-20 h-20 text-gray-200" />
               </Badge>
             </Tooltip>
           </div>

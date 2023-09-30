@@ -167,6 +167,7 @@ main {
   width: 17vmin;
   height: 17vmin;
   border-radius: 17vmin;
+  opacity: 50%;
   z-index: 0;
   backface-visibility: hidden;
   position: absolute;

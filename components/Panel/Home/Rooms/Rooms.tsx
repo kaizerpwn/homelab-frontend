@@ -9,7 +9,7 @@ const Rooms = () => {
       <div className="bg-ultraViolet/20 h-56 max-w-[10rem] w-full rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between transition duration-500 hover:bg-ultraViolet/40 cursor-pointer">
         <p className="text-white/50 flex items-center">Kitchen</p>
         <div className="flex justify-center items-center mb-4 border-b-2 border-gray-600 pb-4">
-          <TbToolsKitchen className="w-20 h-20 text-gray-400" />
+          <TbToolsKitchen className="w-20 h-20 text-gray-200" />
         </div>
         <div>
           <p className="flex items-center justify-between text-gray-400">
@@ -34,7 +34,7 @@ const Rooms = () => {
               shape="circle"
               size="lg"
             >
-              <MdOutlineBedroomChild className="w-20 h-20 text-gray-400" />
+              <MdOutlineBedroomChild className="w-20 h-20 text-gray-200" />
             </Badge>
           </Tooltip>
         </div>
@@ -49,7 +49,7 @@ const Rooms = () => {
       <div className="bg-ultraViolet/20 h-56 max-w-[10rem] w-full rounded-2xl backdrop-filter backdrop-blur-lg drop-shadow-lg p-4 flex flex-col justify-between transition duration-500 hover:bg-ultraViolet/40 cursor-pointer">
         <p className="text-white/50 flex items-center">Living room</p>
         <div className="flex justify-center items-center mb-4 border-b-2 border-gray-600 pb-4">
-          <MdOutlineFamilyRestroom className="w-20 h-20 text-gray-400" />
+          <MdOutlineFamilyRestroom className="w-20 h-20 text-gray-200" />
         </div>
         <div>
           <p className="flex items-center justify-between text-gray-400">
