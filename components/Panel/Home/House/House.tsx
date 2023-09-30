@@ -7,7 +7,7 @@ const House = () => {
     <div>
       <Card
         isFooterBlurred
-        className="w-[620px] h-[500px] col-span-12 sm:col-span-7 opacity-80 drop-shadow-lg shadow-lg relative"
+        className="md:w-[620px] md:h-[500px] col-span-12 sm:col-span-7 opacity-80 drop-shadow-lg shadow-lg relative"
       >
         <CardHeader className="absolute z-10 top-1 flex-col items-start">
           <p className="flex items-center text-tiny text-white/60 uppercase font-bold">

@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
         <div className="hidden w-full md:flex md:w-auto">
           <NavLinks />
           <div className="cursor-pointer ml-28">
-            <Dropdown>
+            <Dropdown className="bg-gradient-to-r from-gray-700 to-gray-800/90 text-white">
               <DropdownTrigger>
                 <div className="flex items-center">
                   <Avatar
@@ -47,18 +47,19 @@ const Navbar: React.FC = () => {
               </DropdownTrigger>
               <DropdownMenu
                 aria-label="Dropdown menu with icons"
-                variant="faded"
+                className="hover:text-white"
+                variant="light"
               >
                 <DropdownItem
                   startContent={
-                    <BiSolidUserCircle className="text-xl text-default-500 pointer-events-none flex-shrink-0" />
+                    <BiSolidUserCircle className="text-xl text-gray-300 pointer-events-none flex-shrink-0 hover:text-white" />
                   }
                 >
                   Profile
                 </DropdownItem>
                 <DropdownItem
                   startContent={
-                    <TbSettings className="text-xl text-default-500 pointer-events-none flex-shrink-0" />
+                    <TbSettings className="text-xl text-gray-300 pointer-events-none flex-shrink-0" />
                   }
                 >
                   Settings
@@ -66,7 +67,7 @@ const Navbar: React.FC = () => {
                 <DropdownItem
                   onClick={() => signOut()}
                   startContent={
-                    <MdLogout className="text-xl text-default-500 pointer-events-none flex-shrink-0" />
+                    <MdLogout className="text-xl text-gray-300 pointer-events-none flex-shrink-0" />
                   }
                 >
                   Log out

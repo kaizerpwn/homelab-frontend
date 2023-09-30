@@ -11,13 +11,12 @@ const Dashboard = () => {
   const { data: session, status } = useSession();
   console.log(session, status);
 
-
   if (status === 'authenticated') {
     return (
       <>
         <PanelLayout>
           <Informations />
-          <div className="grid grid-cols-2 grid-rows-1">
+          <div className="grid grid-cols-1 grid-rows-1 xl:grid-cols-2">
             <Devices />
             <TemperatureGraph />
           </div>
