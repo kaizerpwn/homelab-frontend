@@ -1,9 +1,10 @@
 import type { Config } from 'tailwindcss'
-const {nextui} = require("@nextui-org/react");
+const { nextui } = require("@nextui-org/react");
 
 const config: Config = {
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
 
@@ -21,9 +22,9 @@ const config: Config = {
       colors: {
         panelBackground: "#1F2136",
         cardColor: "#282343",
-        ultraViolet:"#5F4F7F",
-        royalPurple:"#7449A0",
-        lavender:"#B67AE4",
+        ultraViolet: "#5F4F7F",
+        royalPurple: "#7449A0",
+        lavender: "#B67AE4",
 
         primaryColor: "#A78BFA",
         secondaryColor: "#7d54f8",

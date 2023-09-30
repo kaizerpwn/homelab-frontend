@@ -50,7 +50,8 @@ export default function Login() {
             loader={imageLoader}
             className="flex justify-center object-cover object-center mx-auto rounded-3xl"
             alt="HomeLab logotype on sign in page"
-            src={`/images/logo.png`}
+            src="/images/logo.png"
+            unoptimized
             width={300}
             height={200}
           />

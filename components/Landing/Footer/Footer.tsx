@@ -1,7 +1,6 @@
 'use client'
 
-import { imageLoader } from "@/utils/ImageLoader";
-import Image, { ImageLoaderProps } from "next/image";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -11,7 +10,7 @@ const Footer = () => {
           <div className="w-full px-4 lg:w-1/3 md:w-1/2">
             <h2 className="mb-3 text-lg font-semibold tracking-widest text-white title-font">O Nama</h2>
             <p className="mb-2 text-white">HomeLab pojednostavljuje vaš život čineći vaš dom pametnim i potpuno automatizovanim. </p>
-            <Image loader={imageLoader} className="object-cover object-center w-1/2 m-auto md:m-0" alt="hero image smart home" src={`images/logo-white.png`} width={10} height={10} />
+            <Image className="object-cover object-center w-1/2 m-auto md:m-0" alt="hero image smart home" src="images/logo-white.png" unoptimized width={10} height={10} />
           </div>
           <div className="w-full px-4 lg:w-1/3 md:w-1/2">
             <h2 className="mb-3 text-lg font-semibold tracking-widest text-white title-font">Navigacija</h2>

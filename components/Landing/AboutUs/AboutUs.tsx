@@ -1,11 +1,7 @@
 'use client'
-import Image, { ImageLoaderProps } from "next/image";
+import Image from "next/image";
 
 const AboutUs = () => {
-    const imageLoader = ({ src }: ImageLoaderProps) => {
-        return src;
-    }
-
     return (
         <section className="pb-20 text-gray-600 body-font font-lexend" id="onama">
             <div className="container flex flex-wrap px-5 py-10 mx-auto">
@@ -21,7 +17,7 @@ const AboutUs = () => {
                     <a href="#kontakt" className="inline-flex px-6 py-2 ml-2 text-lg rounded-full btn">Kontaktirajte Nas</a>
                 </div>
                 <div className="w-full overflow-hidden rounded-lg lg:w-1/2 sm:mt-0">
-                    <Image loader={imageLoader} className="w-full my-auto" alt="hero image smart home" src={`images/Landing/aboutus.png`} width={600} height={300} />
+                    <Image className="w-full my-auto" alt="hero image smart home" src="images/Landing/aboutus.png" unoptimized width={600} height={300} />
                 </div>
             </div>
         </section>

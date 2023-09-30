@@ -1,42 +1,26 @@
 "use client";
 
-import Image from "next/image";
 import { FaMedal } from "react-icons/fa";
 import { IoIosTime } from "react-icons/io";
 import { BsLightningChargeFill } from "react-icons/bs";
 import { BiWorld } from "react-icons/bi";
-import { imageLoader } from "@/utils/ImageLoader";
-import { useSpring, config, animated } from "react-spring";
+import Image from "next/image";
 
 const Hero = () => {
-  const springs = useSpring({
-    from: { x: -2000 },
-    to: { x: 0 },
-    config: { duration: 1200 },
-  });
-
-  const springsTwo = useSpring({
-    from: { x: 2000 },
-    to: { x: 0 },
-    config: { duration: 1200 },
-  });
-
   return (
     <section
       className="text-gray-600 bg-white body-font font-lexend"
       id="pocetna"
     >
-      <animated.div
-        style={{ ...springs }}
+      <div
         className="container flex flex-col items-center px-5 py-24 mx-auto md:flex-row"
         id="pocetnaSekcija"
       >
         <div className="w-5/6 mb-10 lg:max-w-3xl lg:w-full md:w-full md:mb-0">
           <Image
-            loader={imageLoader}
             className="object-cover object-center rounded-3xl"
             alt="hero image smart home"
-            src={`images/Landing/hero.png`}
+            src="/images/Landing/hero.png"
             width={1000}
             height={600}
           />
@@ -102,9 +86,8 @@ const Hero = () => {
             </button>
           </div>
         </div>
-      </animated.div>
-      <animated.div
-        style={{ ...springsTwo }}
+      </div>
+      <div
         className="container px-5 py-24 mx-auto"
       >
         <div className="flex flex-wrap justify-between -m-4 text-center">
@@ -150,7 +133,7 @@ const Hero = () => {
             </p>
           </div>
         </div>
-      </animated.div>
+      </div>
     </section>
   );
 };

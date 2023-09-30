@@ -1,13 +1,8 @@
 'use client'
 
-import Image, { ImageLoaderProps } from "next/image";
+import Image from "next/image";
 
 const Steps = () => {
-
-  const imageLoader = ({ src }: ImageLoaderProps) => {
-    return src;
-  }
-
 
   return (
     <section className="pb-40 text-gray-600 body-font font-lexend" id="instalacija">
@@ -89,7 +84,7 @@ const Steps = () => {
             </div>
           </div>
           <div className="flex-col w-full my-auto overflow-hidden rounded-lg lg:w-3/5">
-            <Image loader={imageLoader} className="w-full mx-auto my-auto md:w-2/3" src="images/Landing/setup.png" alt="hero image smart home" width={600} height={400} />
+            <Image className="w-full mx-auto my-auto md:w-2/3" src="images/Landing/setup.png" unoptimized alt="hero image smart home" width={600} height={400} />
           </div>
         </div>
       </div>
