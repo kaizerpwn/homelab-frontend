@@ -12,7 +12,7 @@ const HouseList = () => {
         <>
             <div className="flex justify-between">
                 <h1 className="font-bold text-white text-4xl mb-12 border-b-2 border-lavender/50">Your Houses</h1>
-                <button onClick={onOpen} className="flex bg-secondaryColor items-center h-12 hover:bg-secondaryColor/80 transition duration-500 py-2 px-4 text-white rounded-xl">
+                <button onClick={onOpen} className="flex bg-secondaryColor items-center h-12 hover:bg-secondaryColor/80 transition duration-500 outline-none border-none py-2 px-4 text-white rounded-xl">
                     <AiOutlinePlus className="mr-1" /> Add house
                 </button>
             </div>

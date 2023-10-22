@@ -10,7 +10,7 @@ const Devices = () => {
       <div className="border-l-3 border-primaryColor/70 pl-4">
         <div className="flex justify-between">
           <h1 className="text-2xl">Control your devices</h1>
-          <button className="flex bg-secondaryColor h-12 items-center hover:bg-secondaryColor/80 transition duration-500 py-2 px-4 text-white rounded-xl">
+          <button className="flex bg-secondaryColor h-12 items-center hover:bg-secondaryColor/80 outline-none border-none transition duration-500 py-2 px-4 text-white rounded-xl">
             <AiOutlinePlus className="mr-1" /> Add device
           </button>
         </div>

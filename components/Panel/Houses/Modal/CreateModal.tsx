@@ -50,6 +50,19 @@ export default function CreateModal({
 
     const handleCreate = (onClose: () => void) => {
         onClose();
+        setData({
+            address: "",
+            city: "",
+            country: "",
+            zipcode: "",
+            floors: 0,
+            squareMeters: 0,
+            latitude: 0,
+            longitude: 0,
+            image: null,
+            garage: false,
+            parking: false
+        });
     }
 
     const onDrop = (file: any) => { data.image = file; };
