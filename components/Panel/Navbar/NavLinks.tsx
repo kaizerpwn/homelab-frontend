@@ -13,17 +13,17 @@ const links = [
   {
     name: "Houses",
     icon: <BsHouseUp className="w-5 h-5 mr-2" />,
-    href: "/houses",
+    href: "/panel/houses",
   },
   {
     name: "Rooms",
     icon: <MdOutlineBedroomParent className="w-5 h-5 mr-2" />,
-    href: "/rooms",
+    href: "/panel/rooms",
   },
   {
     name: "Devices",
     icon: <MdOutlineDevices className="w-5 h-5 mr-2" />,
-    href: "/devices",
+    href: "/panel/devices",
   },
 ];
 
@@ -35,9 +35,8 @@ const NavLinks: React.FC = () => {
         <li key={index}>
           <Link
             href={link.href}
-            className={`flex items-center py-2 pl-3 pr-4 text-white ${
-              path !== link.href ? "" : "border-b-2 border-lavender/50 rounded"
-            } md:bg-transparent md:p-0 transition duration-500 hover:text-lavender`}
+            className={`flex items-center py-2 pl-3 pr-4 text-white ${path !== link.href ? "" : "border-b-2 border-lavender/50 rounded"
+              } md:bg-transparent md:p-0 transition duration-500 hover:text-lavender`}
           >
             {link.icon}
             {link.name}
