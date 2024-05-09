@@ -1,44 +1,32 @@
 "use client";
 
-import Breadcrumb from "@/components/Panel/Breadcrumb/Breadcrumb";
-import CurrentStats from "@/components/Panel/Home/CurrentStats";
-import TemperatureGraph from "@/components/Panel/Home/TemperatureGraph";
-import PanelLayout from "@/components/Panel/PanelLayout";
-import { Weather } from "@/utils/Interfaces/Weather";
-import { WeatherAPI } from "@/utils/WeatherAPI";
+import Devices from "@/components/Panel/Home/Devices/Devices";
+import Informations from "@/components/Panel/Home/Informations";
+import TemperatureGraph from "@/components/Panel/Home/TemperatureGraph/TemperatureGraph";
+import PanelLayout from "@/components/Panel/Layout";
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import Preloader from "../preloader";
+import { useRouter } from "next/navigation";
 
 const Dashboard = () => {
-  const [weatherInfo, setWeatherInfo] = useState<Weather | undefined>();
-  const { data: session } = useSession();
-  console.log(session);
+  const { data: session, status } = useSession();
+  const router = useRouter();
+  console.log(session, status);
 
-  // useEffect(() => {
-  //   const getWeatherInfo = async () => {
-  //     const weatherInstance = new WeatherAPI("Tuzla");
-  //     const info = await weatherInstance.getLocationInfo();
-  //     setWeatherInfo(info);
-  //   };
-  //   getWeatherInfo();
-  // }, []);
-
-  if (weatherInfo === null) {
-    return <div>Loading...</div>;
-  }
-
-  const weatherData: Weather = {
-    current: weatherInfo?.current,
-  };
-  return (
-    <>
-      <PanelLayout>
-        <Breadcrumb />
-        <CurrentStats />
-        <TemperatureGraph weather={weatherData} />
-      </PanelLayout>
-    </>
-  );
+  if (status === "authenticated") {
+    return (
+      <>
+        <PanelLayout>
+          <Informations />
+          <div className="grid grid-cols-1 grid-rows-1 xl:grid-cols-2">
+            <Devices />
+            <TemperatureGraph />
+          </div>
+        </PanelLayout>
+      </>
+    );
+  } else if (status === "loading") return <Preloader />;
+  else if (status === "unauthenticated") return router.push("/auth/login");
 };
 
 export default Dashboard;
